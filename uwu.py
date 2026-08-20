@@ -37,26 +37,6 @@ class UwuConfig:
 
 
 class Uwuifier:
-    """
-    Discord-aware, context-sensitive UwU text transformer.
-
-    Designed to preserve:
-      - Discord user mentions
-      - role mentions
-      - channel mentions
-      - custom emojis
-      - Discord timestamps
-      - slash commands / configured command prefixes
-      - URLs
-      - email addresses
-      - inline code
-      - fenced code blocks
-      - markdown links
-      - spoilers
-
-    Transformations dynamically vary based on detected speech type.
-    """
-
 
     PROTECTED_RE = re.compile(
         r"""
@@ -728,10 +708,6 @@ class Uwuifier:
     # Public API
 
     def uwuify(self, text: str) -> str:
-        """
-        UwUify Discord message content while preserving Discord-specific
-        syntax and adapting transformations to the detected speech style.
-        """
 
         if not text:
             return text
@@ -792,7 +768,7 @@ class Uwuifier:
 
 
 def main() -> int:
-    """Small stdin/stdout bridge used by the Discord bot service."""
+    # stdin/stdout bridge
     source = sys.stdin.read()
     if not source:
         return 0
