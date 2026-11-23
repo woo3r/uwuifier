@@ -1,2 +1,1 @@
-# uwuifier
-rumi's uwuifier
+This is a pretty simple version
